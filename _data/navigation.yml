@@ -1,0 +1,7 @@
+# The following is the order of the links in the header of the website.
+#
+# Only the Publications page is used on this site; no other pages are added.
+
+main:
+  - title: "Publications"
+    url: /publications/
