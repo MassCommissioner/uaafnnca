@@ -13,6 +13,9 @@ contact information stored in memory.
 - `_pages/publications.html` — publications subpage
 - `_publications/` — one Markdown file per publication
 - `_data/navigation.yml` — header navigation (Publications only; no other pages are used)
+- `_layouts/`, `_includes/` — a small, self-contained rendering theme so the site builds
+  without the upstream theme assets (which include binary images that cannot be pushed
+  through the repository API)
 
 ## Contact
 

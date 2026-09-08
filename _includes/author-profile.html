@@ -1,0 +1,18 @@
+<div class="author">
+  <h3>{{ site.author.name }}</h3>
+  {% if site.author.bio %}<p>{{ site.author.bio }}</p>{% endif %}
+  {% if site.author.employer %}<p>{{ site.author.employer }}</p>{% endif %}
+  {% if site.data.navigation.main %}
+  <ul class="nav">
+    {% for link in site.data.navigation.main %}
+    <li><a href="{{ link.url | prepend: site.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <ul>
+    {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}">Email</a></li>{% endif %}
+    {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>{% endif %}
+    {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}">Google Scholar</a></li>{% endif %}
+    {% if site.author.twitter %}<li><a href="https://x.com/{{ site.author.twitter }}">X</a></li>{% endif %}
+  </ul>
+</div>

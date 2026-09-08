@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.title }}</title>
+    {% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+    {% if site.author.name %}<meta name="author" content="{{ site.author.name }}">{% endif %}
+    <style>
+      :root{--text:#24292f;--muted:#57606a;--link:#0969da;--border:#d0d7de;--bg:#fff;--side:#f6f8fa}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+      a{color:var(--link);text-decoration:none}
+      a:hover{text-decoration:underline}
+      .wrapper{display:flex;flex-wrap:wrap;max-width:1120px;margin:0 auto;padding:2rem 1.5rem;gap:2.5rem}
+      .sidebar{flex:0 0 240px}
+      .content{flex:1 1 480px;min-width:0}
+      .author{text-align:center}
+      .author h3{margin:.5rem 0 .25rem;font-size:1.15rem}
+      .author p{margin:.25rem 0;color:var(--muted);font-size:.9rem}
+      .author ul{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+      .author li{font-size:.9rem}
+      .nav{list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+      .page__title{margin-top:0}
+      h1,h2,h3{line-height:1.25}
+      h2{border-bottom:1px solid var(--border);padding-bottom:.25rem}
+      footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+      .list__item{margin-bottom:1.4rem}
+      .list__item-title{font-size:1.05rem;margin:0}
+      .list__item-meta{color:var(--muted);font-size:.85rem;margin:.15rem 0}
+      .list__item-excerpt{margin:.25rem 0 0;font-size:.92rem}
+      ol li{margin-bottom:.75rem}
+      @media (max-width:760px){.sidebar{flex:1 1 100%}}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        {% if page.author_profile %}{% include author-profile.html %}{% endif %}
+      </aside>
+      <main class="content">
+        {{ content }}
+        <footer>
+          <p>{{ site.title }} &middot; <a href="https://github.com/{{ site.author.github }}">{{ site.author.github }}</a> &middot; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

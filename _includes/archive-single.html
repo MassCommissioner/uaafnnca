@@ -1,0 +1,8 @@
+{% include base_path %}
+<div class="list__item">
+  <h3 class="list__item-title"><a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a></h3>
+  {% if post.venue or post.date %}
+  <p class="list__item-meta">{% if post.venue %}{{ post.venue }}{% endif %}{% if post.venue and post.date %} &middot; {% endif %}{% if post.date %}{{ post.date | date: '%Y' }}{% endif %}</p>
+  {% endif %}
+  {% if post.excerpt %}<p class="list__item-excerpt">{{ post.excerpt }}</p>{% endif %}
+</div>
